@@ -22,11 +22,11 @@ all: $(NAME)
 
 clean:
 	make clean -C libft/
-	rm $(OBJECTS)
+	rm -f $(OBJECTS)
 
 fclean: clean
 	make fclean -C libft/
-	rm $(NAME)
+	rm -f $(NAME)
 bonus: $(NAME)
 
 .c.o: 		
