@@ -6,35 +6,56 @@
 /*   By: lloison <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 14:16:31 by lloison           #+#    #+#             */
-/*   Updated: 2022/11/06 14:42:24 by lloison          ###   ########.fr       */
+/*   Updated: 2022/11/06 19:59:09 by lloison          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
+char	*gen_array(char c, int size)
+{
+	int		i;
+	char	*output;
+
+	if (size > 0)
+	{
+		output = (char *)malloc(sizeof(char) * (size + 1));
+		if (output == 0)
+			return (0);
+		i = 0;
+		while (i < size)
+		{
+			output[i] = c;
+			i++;
+		}
+		output[i] = 0;
+		return (output);
+	}
+	return (ft_strdup(""));
+}
+
 static int	call_corresponding_convert_function(const char *s, va_list args,
-	t_sstring **string, t_flags **flags)
+		t_sstring **string, t_flags *flags)
 {
 	int	return_value;
 
-	(void)flags;
 	return_value = 0;
 	if (*s == 'c')
-		return_value = convert_c(0, args, string);
+		return_value = convert_c(flags, args, string);
 	else if (*s == 's')
-		return_value = convert_s(0, args, string);
+		return_value = convert_s(flags, args, string);
 	else if (*s == 'p')
-		return_value = convert_p(0, args, string);
+		return_value = convert_p(flags, args, string);
 	else if (*s == 'd' || *s == 'i')
-		return_value = convert_di(0, args, string);
+		return_value = convert_di(flags, args, string);
 	else if (*s == 'u')
-		return_value = convert_u(0, args, string);
+		return_value = convert_u(flags, args, string);
 	else if (*s == 'x')
-		return_value = convert_x(0, 0, args, string);
+		return_value = convert_x(0, flags, args, string);
 	else if (*s == 'X')
-		return_value = convert_x(1, 0, args, string);
+		return_value = convert_x(1, flags, args, string);
 	else if (*s == '%')
-		return_value = convert_doublepercent(0, args, string);
+		return_value = convert_doublepercent(flags, args, string);
 	return (return_value);
 }
 
@@ -45,14 +66,19 @@ int	convert_percent(const char *s, va_list args, t_sstring **string)
 	t_flags	*flags;
 
 	s++;
-	flags = (t_flags *) malloc(sizeof(t_flags));
+	flags = get_flags(s);
 	if (flags == 0)
 		return (-1);
-	return_value = call_corresponding_convert_function(s, args, string, &flags);
-	free(flags);
+	return_value = call_corresponding_convert_function(s + flags->flags_length,
+			args, string, flags);
 	if (return_value == -1)
+	{
+		free(flags);
 		return (-1);
-	return (2);
+	}
+	return_value = flags->flags_length;
+	free(flags);
+	return (return_value);
 }
 
 static int	add_no_format(char *substr, t_sstring **string, unsigned int size)
@@ -82,7 +108,7 @@ t_sstring	*generate_string(const char *s, va_list args)
 			tmp = convert_percent(s, args, &string);
 			if (tmp == -1)
 				return (free_sstring(&string));
-			s += tmp;
+			s += tmp + 2;
 			i = -1;
 		}
 	}

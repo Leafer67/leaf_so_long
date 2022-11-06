@@ -9,7 +9,8 @@ SOURCES = ft_printf.c \
 	convert_u.c \
 	convert_percent.c \
 	convert_x.c \
-	sstring.c
+	sstring.c \
+	flags.c
 
 SOURCES_BONUS = 
 

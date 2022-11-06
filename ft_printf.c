@@ -6,7 +6,7 @@
 /*   By: lloison <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 14:23:10 by lloison           #+#    #+#             */
-/*   Updated: 2022/11/06 15:51:47 by lloison          ###   ########.fr       */
+/*   Updated: 2022/11/06 19:59:18 by lloison          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,8 @@ int main(int argc, char **argv)
 {
 	(void) argc;
 	(void) argv;
-	printf("%d\n" ,ft_printf(""));
+	printf("%d\n" ,ft_printf("%p", ""));
 	printf("====================\n");
-	printf("%d\n", printf("%1-s", ""));
+	printf("%d\n", printf("%.10s, %.10s, %.10s, %.10s", NULL, "", "test", 
+"joihwhhgsdkhksdgsdg\t\v\n\r\f\a25252\b6"));
 }*/
