@@ -6,7 +6,7 @@
 /*   By: lloison <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 14:23:10 by lloison           #+#    #+#             */
-/*   Updated: 2022/11/06 14:54:04 by lloison          ###   ########.fr       */
+/*   Updated: 2022/11/06 15:51:47 by lloison          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	ft_printf(const char *s, ...)
 	return (return_value);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 int main(int argc, char **argv)
 {
 	(void) argc;
@@ -41,4 +41,4 @@ int main(int argc, char **argv)
 	printf("%d\n" ,ft_printf(""));
 	printf("====================\n");
 	printf("%d\n", printf("%1-s", ""));
-}
+}*/
