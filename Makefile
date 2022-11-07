@@ -2,6 +2,7 @@ NAME = libftprintf.a
 
 SOURCES = ft_printf.c \
 	ft_printf_helper.c \
+	convert_utils.c \
 	convert_c.c \
 	convert_di.c \
 	convert_p.c \

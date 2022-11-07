@@ -6,7 +6,7 @@
 /*   By: lloison <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 18:43:49 by lloison           #+#    #+#             */
-/*   Updated: 2022/11/06 19:52:39 by lloison          ###   ########.fr       */
+/*   Updated: 2022/11/07 10:42:43 by lloison          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	are_flags_valid(t_flags *flags)
 {
-	if (flags->hashtag == 1 || flags->blank == 1)
+	if (flags->hashtag == 1 || flags->plus == 1)
 		return (-1);
 	return (0);
 }
@@ -45,26 +45,6 @@ static char	*generate_to_add(t_flags *flags, char *arg)
 		}
 		return (tmp);
 	}
-}
-
-int	normal_behavior(t_sstring **string,	char *s, char *spaces)
-{
-	if (add_to_text(string, spaces, ft_strlen(spaces)) == -1)
-	{
-		free(s);
-		return (-1);
-	}
-	return (add_to_text(string, s, ft_strlen(s)));
-}
-
-int	minus_behavior(t_sstring **string, char *s, char *spaces)
-{
-	if (add_to_text(string, s, ft_strlen(s)) == -1)
-	{
-		free(spaces);
-		return (-1);
-	}
-	return (add_to_text(string, spaces, ft_strlen(spaces)));
 }
 
 int	convert_s(t_flags *flags, va_list args, t_sstring **string)

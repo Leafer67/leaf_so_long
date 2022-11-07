@@ -6,12 +6,11 @@
 /*   By: lloison <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 18:56:08 by lloison           #+#    #+#             */
-/*   Updated: 2022/11/02 15:07:41 by lloison          ###   ########.fr       */
+/*   Updated: 2022/11/07 15:36:16 by lloison          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static size_t	count_nb_words(char const *s, char c)
 {

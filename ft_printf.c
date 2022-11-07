@@ -6,7 +6,7 @@
 /*   By: lloison <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 14:23:10 by lloison           #+#    #+#             */
-/*   Updated: 2022/11/06 19:59:18 by lloison          ###   ########.fr       */
+/*   Updated: 2022/11/07 20:12:34 by lloison          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,48 @@ int	ft_printf(const char *s, ...)
 }
 
 /*#include <stdio.h>
+
+#define TEST ">------------<%4.16d>------------<"
+#define VALUE 0
+
+void debug(int test_number, char *text, int value)
+{
+	printf("===========TEST %02d======================================\n", test_number);
+	printf("TEXTE : %s | VALEUR %d\n", text, value);
+	printf("  %d\n", ft_printf(text, value));
+	printf("--------------------------------------------------------\n");
+	printf("  %d\n", printf(text, value));
+	printf("===========END OF TEST %02d ==============================\n\n\n", test_number);
+}
 int main(int argc, char **argv)
 {
 	(void) argc;
 	(void) argv;
-	printf("%d\n" ,ft_printf("%p", ""));
-	printf("====================\n");
-	printf("%d\n", printf("%.10s, %.10s, %.10s, %.10s", NULL, "", "test", 
-"joihwhhgsdkhksdgsdg\t\v\n\r\f\a25252\b6"));
+	debug(1, ">------------<%4.16d>------------<", 0);
+	debug(2, "!%48.2d!", 0);
+	debug(21, "% 47.5d", 0);
+	debug(3, "!%44.18d!", -1247144984);
+	debug(4, "%10.5i", -216);
+	debug(5, "%3.7i", -2375);
+	debug(6, "% 06d", 0);
+	debug(7, "% 06d", -5);
+	debug(8, "%.0i", 0);
+	debug(9, "%.i", 0);
+	debug(10, "% d", 0);
+	debug(11, "%0d", 0);
+	debug(12, "%1.5d", 15);
+	debug(13, "%037d", 0);
+	debug(14, "%07i", -54);
+	debug(15, "%5.0i", 0);
+	debug(16, "\\!/% 32.19d\\!/", -1673416894);
+  	debug(17, "!% 013d!", 1920160384);
+	debug(18, "!%+08d!", 0);
+	debug(19, "42%+56.6d42", 0);
+	debug(20, "%+40.49d", 1352876436);
+	debug(21, "%+020d", 0);
+	debug(22, "%+.d", 0);
+	debug(23, "% d", 0);
+	printf("% .0d, % 0d, % .0d, % .0d, % .0d, % .0d, % .0d, % .0d\n", 0, 0, -1, -10, 100, -1862, -2147483648, 2147483647);
+	ft_printf("% .0d, % 0d, % .0d, % .0d, % .0d, % .0d, % .0d, % .0d\n", 0, 0, -1, -10, 100, -1862, -2147483648, 2147483647);
+
 }*/

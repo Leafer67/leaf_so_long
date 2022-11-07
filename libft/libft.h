@@ -6,7 +6,7 @@
 /*   By: lloison <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 12:39:36 by lloison           #+#    #+#             */
-/*   Updated: 2022/11/04 19:05:05 by lloison          ###   ########.fr       */
+/*   Updated: 2022/11/07 13:43:16 by lloison          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ int		ft_tolower(int c);
 int		ft_toupper(int c);
 char	*ft_itoa(int n);
 char	*ft_uitoa(unsigned int n);
+char	*ft_ltoa(long long n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 void	ft_putchar_fd(char c, int fd);
