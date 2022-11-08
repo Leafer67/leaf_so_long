@@ -6,7 +6,7 @@
 /*   By: lloison <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 14:23:25 by lloison           #+#    #+#             */
-/*   Updated: 2022/11/06 19:53:33 by lloison          ###   ########.fr       */
+/*   Updated: 2022/11/08 14:56:52 by lloison          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,11 @@ typedef struct s_flags
 	int		flags_length;
 }	t_flags;
 
+char		*add_plus(char *output, t_flags *flags, long long arg, int is_n);
+char		*add_minus(char *output, t_flags *flags, int is_n);
+char		*add_blank(char *output, t_flags *flags);
+char		*add_zeros(char *output, t_flags *flags, long long arg);
+char		*format_hash_flag(char *output, int is_upper);
 int			normal_behavior(t_sstring **string, char *s, char *spaces);
 int			minus_behavior(t_sstring **string, char *s, char *spaces);
 int			convert_c(t_flags *flags, va_list args, t_sstring **string);

@@ -6,7 +6,7 @@
 /*   By: lloison <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 18:40:02 by lloison           #+#    #+#             */
-/*   Updated: 2022/11/06 19:54:41 by lloison          ###   ########.fr       */
+/*   Updated: 2022/11/08 15:27:01 by lloison          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	are_flags_valid(t_flags *flags)
 {
-	if (flags->plus == 1 || flags->hashtag == 1 || flags->precision == 1
+	if (flags->plus == 1 || flags->hashtag == 1
 		|| flags->blank == 1 || flags->zero == 1)
 		return (-1);
 	return (0);

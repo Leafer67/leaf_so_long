@@ -6,7 +6,7 @@
 /*   By: lloison <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 11:59:17 by lloison           #+#    #+#             */
-/*   Updated: 2022/11/06 14:02:39 by lloison          ###   ########.fr       */
+/*   Updated: 2022/11/08 15:31:08 by lloison          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,20 @@
 
 int	convert_doublepercent(t_flags *flags, va_list args, t_sstring **string)
 {
-	char	*tmp;
+	char	*to_add;
+	char	*spaces;
 
 	(void) args;
-	(void) flags;
-	tmp = ft_strdup("%");
-	if (tmp == 0)
+	to_add = ft_strdup("%");
+	if (to_add == 0)
 		return (-1);
-	return (add_to_text(string, tmp, ft_strlen(tmp)));
+	spaces = gen_array(' ', flags->precision_x - 1);
+	if (spaces == 0)
+	{
+		free(to_add);
+		return (-1);
+	}
+	if (flags->minus == 1)
+		return (minus_behavior(string, to_add, spaces));
+	return (normal_behavior(string, to_add, spaces));
 }

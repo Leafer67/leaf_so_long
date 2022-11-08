@@ -51,7 +51,6 @@ SOURCES = ft_atoi.c \
 OBJECTS = $(SOURCES:.c=.o)
 
 FLAGS = -Wall -Wextra -Werror
-
 CC = gcc $(FLAGS)
 
 all: $(NAME)
