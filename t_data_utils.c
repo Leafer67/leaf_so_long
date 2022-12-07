@@ -6,7 +6,7 @@
 /*   By: lloison < lloison@student.42mulhouse.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 16:48:40 by lloison           #+#    #+#             */
-/*   Updated: 2022/12/07 18:07:06 by lloison          ###   ########.fr       */
+/*   Updated: 2022/12/07 18:15:18 by lloison          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,6 @@ void	free_data(t_data **data)
 	if ((*data))
 	{
 		free_all_sprites(*data);
-		free_map((*data)->map);
 		free_ui(*data);
 		free_enemies_path(*data);
 		mlx_terminate((*data)->mlx);

@@ -6,7 +6,7 @@
 /*   By: lloison < lloison@student.42mulhouse.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 16:48:39 by lloison           #+#    #+#             */
-/*   Updated: 2022/12/07 15:42:46 by lloison          ###   ########.fr       */
+/*   Updated: 2022/12/07 18:21:43 by lloison          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,8 +81,8 @@ t_data	*init_data(mlx_t *mlx, t_map *map)
 	if (output == 0)
 		exit_program(0, "Malloc error");
 	output->mlx = mlx;
-	load_all_png(output);
 	output->map = map;
+	load_all_png(output);
 	output->start_pos = pos(
 			(WINDOW_WIDTH - map->size.x * SPRITE_WIDTH) / 2 + SPRITE_WIDTH / 2,
 			(WINDOW_HEIGHT - map->size.y * SPRITE_HEIGHT)
