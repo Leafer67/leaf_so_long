@@ -3,7 +3,7 @@ LIBMLX	:= ~/MLX42/
 CFLAGS = -Wall -Wextra -Werror -g
 MLX_FLAGS = $(LIBMLX)/libmlx42.a
 CC = gcc
-LIBFT = libft_enhanced/libft_enhanced.a
+LIBFT = libft/libft_enhanced.a
 HEADERS	:= -I ./include -I $(LIBMLX)/include
 
 SOURCES = 	main.c \
@@ -61,11 +61,11 @@ libmlx:
 	@$(MAKE) -C $(LIBMLX)
 
 clean:
-	make clean -C libft_enhanced/
+	make clean -C libft/
 	rm -f $(OBJECTS)
 
 fclean: clean
-	make fclean -C libft_enhanced/
+	make fclean -C libft/
 	rm -f $(NAME)
 
 bonus: $(NAME)
@@ -82,7 +82,7 @@ debug: $(LIBFT) $(SOURCES) $(OBJECTS)
 	$(CC) $(MLX_FLAGS) -g $(FLAGS) -fsanitize=address $(OBJECTS) $(LIBFT) -lglfw -L "/Users/lloison/.brew/opt/glfw/lib/" -o $(NAME)
 
 $(LIBFT) :
-	make -C libft_enhanced/
+	make -C libft/
 
 $(NAME): $(LIBFT) $(SOURCES) $(OBJECTS)
 	$(CC) $(MLX_FLAGS) $(FLAGS) $(OBJECTS) $(LIBFT) -lglfw -L "/Users/lloison/.brew/opt/glfw/lib/" -o $(NAME)

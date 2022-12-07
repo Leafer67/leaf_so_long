@@ -6,7 +6,7 @@
 /*   By: lloison < lloison@student.42mulhouse.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 16:49:21 by lloison           #+#    #+#             */
-/*   Updated: 2022/12/07 15:42:26 by lloison          ###   ########.fr       */
+/*   Updated: 2022/12/07 18:01:02 by lloison          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include "defines.h"
 # include "MLX42/MLX42.h"
 # include <stdlib.h>
-# include "libft_enhanced/libft_e.h"
+# include "libft/libft_e.h"
 # include "map.h"
 # include <math.h>
 
