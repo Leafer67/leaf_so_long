@@ -6,7 +6,7 @@
 /*   By: lloison < lloison@student.42mulhouse.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 13:27:16 by lloison           #+#    #+#             */
-/*   Updated: 2022/12/07 18:01:10 by lloison          ###   ########.fr       */
+/*   Updated: 2022/12/07 18:07:37 by lloison          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,6 @@ typedef struct s_map
 	t_pos		start_pos;
 }	t_map;
 
-void	free_map(t_map **map);
+void	free_map(t_map *map);
 
 #endif

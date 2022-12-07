@@ -6,7 +6,7 @@
 /*   By: lloison < lloison@student.42mulhouse.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 10:28:18 by lloison           #+#    #+#             */
-/*   Updated: 2022/11/21 10:46:41 by lloison          ###   ########.fr       */
+/*   Updated: 2022/12/07 18:08:14 by lloison          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static void	exit_program(t_bool **visited, t_map *map, char *error_msg)
 		free(visited);
 	}
 	if (map != 0)
-		free_map(&map);
+		free_map(map);
 	ft_printf("Error\n");
 	ft_printf("%s\n", error_msg);
 	exit(0);

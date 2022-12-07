@@ -6,7 +6,7 @@
 /*   By: lloison < lloison@student.42mulhouse.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 10:25:07 by lloison           #+#    #+#             */
-/*   Updated: 2022/11/25 15:00:21 by lloison          ###   ########.fr       */
+/*   Updated: 2022/12/07 18:08:01 by lloison          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	exit_program(int fd, t_list **list, t_map *map, char *error_msg)
 	if (list)
 		ft_lstclear(list, free);
 	if (map != 0)
-		free_map(&map);
+		free_map(map);
 	ft_printf("Error\n");
 	ft_printf("%s\n", error_msg);
 	exit(0);

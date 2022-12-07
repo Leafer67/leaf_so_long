@@ -6,7 +6,7 @@
 /*   By: lloison < lloison@student.42mulhouse.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 10:54:01 by lloison           #+#    #+#             */
-/*   Updated: 2022/11/28 11:57:29 by lloison          ###   ########.fr       */
+/*   Updated: 2022/12/07 18:08:25 by lloison          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void	exit_program(t_data *data, t_map *map, char *error_msg)
 	if (data != 0)
 		free_data(&data);
 	if (map != 0)
-		free_map(&map);
+		free_map(map);
 	ft_printf("Error\n");
 	ft_printf("%s\n", error_msg);
 	exit(0);
