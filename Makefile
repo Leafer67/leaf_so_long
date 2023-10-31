@@ -85,6 +85,8 @@ $(LIBFT) :
 	make -C libft/
 
 linux: $(LIBFT) $(SOURCES) $(OBJECTS)
+	cd ./MLX42 && cmake -B build && cmake --build build -j4
+	cd ..
 	$(CC) $(CFLAGS) $(OBJECTS) $(MLX_FLAGS) $(LIBFT) -o $(NAME)
 
 $(NAME): $(LIBFT) $(SOURCES) $(OBJECTS)
