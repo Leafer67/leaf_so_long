@@ -47,14 +47,14 @@ int	reconstruct_path(t_node *end_node, t_enemy *enemy)
 }
 
 void	add_toclear(t_data *data, t_queue *queue,
-	t_list *toclear, t_node *to_add)
+	t_list **toclear, t_node *to_add)
 {
 	t_list	*tmp;
 
 	tmp = ft_lstnew(to_add);
 	if (tmp == 0)
-		exit_program(queue, data, toclear, "Malloc error");
-	ft_lstadd_front(&toclear, tmp);
+		exit_program(queue, data, *toclear, "Malloc error");
+	ft_lstadd_front(toclear, tmp);
 }
 
 int	no_path_found(t_queue **queue, t_list **toclear)

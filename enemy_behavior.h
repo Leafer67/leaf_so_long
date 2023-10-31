@@ -27,7 +27,7 @@ void	add_tile_to_path(t_data *data, t_enemy *enemy, t_pos tile_pos);
 t_pos	find_next_patrol_tile(t_data *data, t_enemy *enemy);
 int		calculate_path_to_player(t_data *data, t_enemy *enemy);
 void	add_toclear(t_data *data, t_queue *queue,
-			t_list *toclear, t_node *to_add);
+			t_list **toclear, t_node *to_add);
 int		reconstruct_path(t_node *end_node, t_enemy *enemy);
 int		no_path_found(t_queue **queue, t_list **toclear);
 void	kill_enemy(t_enemy *enemy);

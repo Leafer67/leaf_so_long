@@ -74,6 +74,7 @@ int	main(int argc, char **argv)
 			return (0);
 		map = parse_map(argv[1]);
 		data = init_data(mlx, map);
+		data->argv = argv[1];
 		render_frame(data);
 		mlx_loop_hook(data->mlx, handle_input, &data);
 		mlx_close_hook(data->mlx, close_game, data);

@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "t_data.h"
+#include <stdio.h>
 
 void	free_sprites(t_data *data, int img_count, ...)
 {
@@ -24,7 +25,10 @@ void	free_sprites(t_data *data, int img_count, ...)
 	{
 		tmp = va_arg(args, mlx_image_t *);
 		if (tmp)
+		{
 			mlx_delete_image(data->mlx, tmp);
+			free(tmp);
+		}
 		i++;
 	}
 	va_end(args);

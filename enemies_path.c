@@ -72,6 +72,19 @@ static void	enqueue_all_adjacent_tile(t_data *d, t_queue **queue,
 	enqueue_all_adjacent_tile2(d, queue, p, visited);
 }
 
+void free_visited(t_bool ***visited, t_map* map)
+{
+	int i;
+
+	i = 0;
+	while (i < map->size.y)
+	{
+		free((*visited)[i]);
+		i++;
+	}
+	free(*visited);
+}
+
 int	calculate_path_to_player(t_data *data, t_enemy *enemy)
 {
 	t_queue	*queue;
@@ -93,10 +106,13 @@ int	calculate_path_to_player(t_data *data, t_enemy *enemy)
 				exit_program(queue, data, toclear, "Malloc error");
 			free_queue(&queue, free);
 			ft_lstclear(&toclear, free);
+			free_visited(&visited, data->map);
+			free(tmp);
 			return (1);
 		}
 		enqueue_all_adjacent_tile(data, &queue, tmp, visited);
-		add_toclear(data, queue, toclear, tmp);
+		add_toclear(data, queue, &toclear, tmp);
 	}
+	free_visited(&visited, data->map);
 	return (no_path_found(&queue, &toclear));
 }

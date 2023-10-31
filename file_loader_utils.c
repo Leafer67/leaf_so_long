@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "t_data.h"
+#include <stdio.h>
 
 static void	exit_program(t_data *data, char *error_msg)
 {
@@ -28,8 +29,10 @@ mlx_image_t	*load_png(t_data *data, char *filepath)
 	tmp = mlx_load_png(filepath);
 	if (!tmp)
 		exit_program(data, ".png files missing or invalid");
+	printf("%p %p\n", data->mlx, tmp);
 	output = mlx_texture_to_image(data->mlx, tmp);
 	if (!output)
 		exit_program(data, "texture_to_image failed");
+	free(tmp);
 	return (output);
 }

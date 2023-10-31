@@ -121,6 +121,7 @@ typedef struct s_data
 	int				enemy_count;
 	double			delta_time;
 	double			timer;
+	char			*argv;
 }	t_data;
 
 mlx_image_t	*load_png(t_data *data, char *filepath);

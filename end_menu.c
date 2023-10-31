@@ -32,7 +32,7 @@ void	display_end_menu(t_data *data, t_bool won)
 		data->ui_images.end_text = mlx_put_string(data->mlx, "YOU WON !",
 				WINDOW_WIDTH / 2 - 50,
 				WINDOW_HEIGHT / 2 - 5);
-		if (data->ui_images.end_text < 0)
+		if (data->ui_images.end_text == 0)
 			exit_program(data, "mlx_put_string failed");
 	}
 	else
@@ -40,7 +40,7 @@ void	display_end_menu(t_data *data, t_bool won)
 		data->ui_images.end_text = mlx_put_string(data->mlx, "YOU LOSE !",
 				WINDOW_WIDTH / 2 - 50,
 				WINDOW_HEIGHT / 2 - 5);
-		if (data->ui_images.end_text < 0)
+		if (data->ui_images.end_text == 0)
 			exit_program(data, "mlx_put_string failed");
 	}
 }

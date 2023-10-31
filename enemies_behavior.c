@@ -12,6 +12,7 @@
 
 #include "t_data.h"
 #include "enemy_behavior.h"
+#include <stdio.h>
 
 void	update_enemies(t_data *data, double time)
 {

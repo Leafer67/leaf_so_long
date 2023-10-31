@@ -12,6 +12,7 @@
 
 #include "t_data.h"
 #include "renderer.h"
+#include "parsing.h"
 
 void	end_game(t_data *data, t_bool has_won)
 {
@@ -37,15 +38,8 @@ void	restart_game(t_data **data)
 {
 	t_map	*tmp_map;
 	mlx_t	*tmp_mlx;
-	int		i;
 
-	i = 0;
-	tmp_map = (*data)->map;
-	while (i < tmp_map->nb_items)
-	{
-		tmp_map->tiles[tmp_map->items_pos[i].y][tmp_map->items_pos[i].x] = 'C';
-		i++;
-	}
+	tmp_map = parse_map((*data)->argv);
 	tmp_mlx = (*data)->mlx;
 	reset_data(*data);
 	*data = init_data(tmp_mlx, tmp_map);

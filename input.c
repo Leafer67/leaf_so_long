@@ -73,8 +73,8 @@ void	handle_input(void *ptr)
 		update_ui(*data, FALSE, time);
 		handle_animation(*data, time);
 	}
-	else if (mlx_is_key_down((*data)->mlx, MLX_KEY_R))
-		restart_game(data);
+	// else if (mlx_is_key_down((*data)->mlx, MLX_KEY_R))
+	// 	restart_game(data);
 	if (mlx_is_key_down((*data)->mlx, MLX_KEY_ESCAPE))
 		close_game(*data);
 }

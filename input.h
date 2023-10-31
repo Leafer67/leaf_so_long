@@ -13,6 +13,7 @@
 #ifndef INPUT_H
 # define INPUT_H
 
+# include <stdio.h>
 # include "t_data.h"
 
 void	check_collision(t_data *data);

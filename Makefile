@@ -1,7 +1,7 @@
-NAME = so_long.out
-LIBMLX	:= ~/MLX42/
-CFLAGS = -Wall -Wextra -Werror -g
-MLX_FLAGS = $(LIBMLX)/libmlx42.a
+NAME = so_long
+LIBMLX	:= ./MLX42
+CFLAGS = -Wall -Wextra -Werror -g -fsanitize=leak
+MLX_FLAGS = $(LIBMLX)/build/libmlx42.a -ldl -lglfw -pthread -lm
 CC = gcc
 LIBFT = libft/libft_enhanced.a
 HEADERS	:= -I ./include -I $(LIBMLX)/include
@@ -84,5 +84,8 @@ debug: $(LIBFT) $(SOURCES) $(OBJECTS)
 $(LIBFT) :
 	make -C libft/
 
+linux: $(LIBFT) $(SOURCES) $(OBJECTS)
+	$(CC) $(CFLAGS) $(OBJECTS) $(MLX_FLAGS) $(LIBFT) -o $(NAME)
+
 $(NAME): $(LIBFT) $(SOURCES) $(OBJECTS)
-	$(CC) $(MLX_FLAGS) $(FLAGS) $(OBJECTS) $(LIBFT) -lglfw -L "/Users/lloison/.brew/opt/glfw/lib/" -o $(NAME)
+	$(CC) $(OBJECTS) $(MLX_FLAGS) $(LIBFT) -o $(NAME)

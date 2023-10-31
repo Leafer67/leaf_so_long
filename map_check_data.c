@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "parsing.h"
+#include <stdio.h>
 
 static void	exit_program(int fd, t_list **list, t_map *map, char *error_msg)
 {
@@ -43,6 +44,8 @@ void	data_to_tiles(t_map *map, t_list **map_lines)
 		lst = lst->next;
 		i++;
 	}
+	for(int i = 0; i < map->size.y; i++)
+		printf("%s\n", map->tiles[i]);
 }
 
 void	get_start_pos(t_map *map)

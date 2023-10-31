@@ -77,7 +77,7 @@ t_data	*init_data(mlx_t *mlx, t_map *map)
 {
 	t_data			*output;
 
-	output = malloc(sizeof(t_data));
+	output = ft_calloc(1, sizeof(t_data));
 	if (output == 0)
 		exit_program(0, "Malloc error");
 	output->mlx = mlx;

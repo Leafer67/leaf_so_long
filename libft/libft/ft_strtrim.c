@@ -45,7 +45,7 @@ static size_t	get_end_index(char const *s1, char const *set, size_t set_size)
 	size_t	i;
 
 	i = ft_strlen(s1) - 1;
-	while (i >= 0 && is_in_set(s1[i], set, set_size))
+	while (is_in_set(s1[i], set, set_size))
 	{
 		i--;
 		if (i == 0)

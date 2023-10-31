@@ -29,6 +29,8 @@ static void	free_enemy_sprites(t_data *data)
 		s->death_left[7], s->death_right[0], s->death_right[1],
 		s->death_right[2], s->death_right[3], s->death_right[4],
 		s->death_right[5], s->death_right[6], s->death_right[7]);
+	free(s->curr_instance);
+	free(data->enemies);
 }
 
 static void	free_all_sprites(t_data *data)
@@ -73,11 +75,20 @@ static void	free_enemies_path(t_data *data)
 
 void	free_data(t_data **data)
 {
+	int i;
+
+	i = 0;
 	if ((*data))
 	{
 		free_all_sprites(*data);
 		free_ui(*data);
 		free_enemies_path(*data);
+		while (i < (*data)->map->size.y)
+		{
+			free((*data)->map->tiles[i]);
+			i++;
+		}
+		free((*data)->map->tiles);
 		mlx_terminate((*data)->mlx);
 		free((*data));
 		exit(0);

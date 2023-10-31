@@ -14,7 +14,7 @@
 # define RENDERER_H
 
 # include "defines.h"
-# include "MLX42/MLX42.h"
+# include "MLX42/include/MLX42/MLX42.h"
 # include "map.h"
 # include "t_data.h"
 
